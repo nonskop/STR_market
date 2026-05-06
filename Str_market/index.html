@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airsoft-Rus | Магазин страйкбольного оружия</title>
+    <!-- Подключение Font Awesome для иконок -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Подключение внешнего CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <div class="header-container">
+        <div class="logo">
+            <h1>AIRSOFT-RUS</h1>
+            <span>силовая страйкбольная торговля</span>
+        </div>
+
+        <div class="nav-links">
+            <a href="#">Каталог</a>
+            <a href="#">Бренды</a>
+            <a href="#">Акции</a>
+            <a href="#">Доставка</a>
+            <a href="#">Контакты</a>
+        </div>
+
+        <div style="display: flex; align-items: center;">
+            <div class="auth-buttons">
+                <button class="btn-outline" id="loginBtn"><i class="fas fa-user"></i> Войти</button>
+                <button class="btn-solid" id="registerBtn"><i class="fas fa-user-plus"></i> Регистрация</button>
+            </div>
+            <div class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-badge">3</span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Модальное окно регистрация / вход -->
+<div class="modal-overlay" id="authModal">
+    <div class="modal">
+        <span class="close-modal" id="closeModal">&times;</span>
+        <h2 id="modalTitle">Вход в аккаунт</h2>
+        
+        <input type="email" placeholder="E-mail" id="emailInput">
+        <input type="password" placeholder="Пароль" id="passInput">
+        
+        <button class="btn-solid" id="modalActionBtn"><i class="fas fa-sign-in-alt"></i> <span id="btnText">Войти</span></button>
+        
+        <div class="modal-footer">
+            <span id="switchModal">Нет аккаунта? Зарегистрироваться</span>
+        </div>
+    </div>
+</div>
+
+<main>
+    <section class="hero">
+        <div class="hero-text">
+            <h2>Страйкбол <span>нового уровня</span></h2>
+            <p>Приводы, экипировка, тюнинг от лидеров рынка. Тактический стиль и надёжность.</p>
+            <button class="hero-btn">Перейти в каталог →</button>
+        </div>
+        <div style="font-size: 5rem; color: #1e3f66;">⚡</div>
+    </section>
+
+    <div class="filter-bar">
+        <span class="filter-btn active">Все товары</span>
+        <span class="filter-btn">Приводы</span>
+        <span class="filter-btn">Приводы AEG</span>
+        <span class="filter-btn">Газовое</span>
+        <span class="filter-btn">Снаряжение</span>
+        <span class="filter-btn">Бонусы</span>
+    </div>
+
+    <div class="products-grid">
+        <!-- Карточка 1 -->
+        <div class="product-card">
+            <div class="product-image">
+                <i class="fas fa-crosshairs" style="font-size:4rem;"></i>
+            </div>
+            <div class="product-info">
+                <div class="product-title">CYMA M4 CQB</div>
+                <div class="product-desc">Страйкбольный привод, 320-350 FPS</div>
+                <div class="price-row">
+                    <span class="price">12 490 ₽</span>
+                    <span class="old-price">14 990</span>
+                </div>
+                <button class="btn-card"><i class="fas fa-shopping-cart"></i> В корзину</button>
+            </div>
+        </div>
+        <!-- Карточка 2 -->
+        <div class="product-card">
+            <div class="product-image">
+                <i class="fas fa-gun" style="font-size:4rem;"></i>
+            </div>
+            <div class="product-info">
+                <div class="product-title">ASG AUG A3</div>
+                <div class="product-desc">Электрический, металл</div>
+                <div class="price-row">
+                    <span class="price">18 200 ₽</span>
+                </div>
+                <button class="btn-card"><i class="fas fa-shopping-cart"></i> В корзину</button>
+            </div>
+        </div>
+        <!-- Карточка 3 -->
+        <div class="product-card">
+            <div class="product-image">
+                <i class="fas fa-vest" style="font-size:4rem;"></i>
+            </div>
+            <div class="product-info">
+                <div class="product-title">Разгрузка "Smersh"</div>
+                <div class="product-desc">Тактический жилет, камуфляж</div>
+                <div class="price-row">
+                    <span class="price">5 790 ₽</span>
+                </div>
+                <button class="btn-card"><i class="fas fa-shopping-cart"></i> В корзину</button>
+            </div>
+        </div>
+        <!-- Карточка 4 -->
+        <div class="product-card">
+            <div class="product-image">
+                <i class="fas fa-mask" style="font-size:4rem;"></i>
+            </div>
+            <div class="product-info">
+                <div class="product-title">Тактические очки</div>
+                <div class="product-desc">Ballistic, затемнённые</div>
+                <div class="price-row">
+                    <span class="price">1 990 ₽</span>
+                </div>
+                <button class="btn-card"><i class="fas fa-shopping-cart"></i> В корзину</button>
+            </div>
+        </div>
+        <!-- Карточка 5 -->
+        <div class="product-card">
+            <div class="product-image">
+                <i class="fas fa-gun" style="transform: rotate(-15deg); font-size:4rem;"></i>
+            </div>
+            <div class="product-info">
+                <div class="product-title">Glock 18C</div>
+                <div class="product-desc">Газовый, blowback</div>
+                <div class="price-row">
+                    <span class="price">8 490 ₽</span>
+                </div>
+                <button class="btn-card"><i class="fas fa-shopping-cart"></i> В корзину</button>
+            </div>
+        </div>
+        <!-- Карточка 6 -->
+        <div class="product-card">
+            <div class="product-image">
+                <i class="fas fa-shield-halved" style="font-size:4rem;"></i>
+            </div>
+            <div class="product-info">
+                <div class="product-title">Баллистический щит</div>
+                <div class="product-desc">Поликарбонат, тактик</div>
+                <div class="price-row">
+                    <span class="price">6 200 ₽</span>
+                </div>
+                <button class="btn-card"><i class="fas fa-shopping-cart"></i> В корзину</button>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div></div>
+        <div></div>
+        <div><i class="fab fa-telegram"></i> <i class="fab fa-youtube"></i></div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
