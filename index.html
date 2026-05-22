@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airsoft-Rus | Магазин страйкбольного оружия</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <div class="header-container">
+        <div class="logo">
+            <h1>AIRSOFT-RUS</h1>
+            <span>силовая страйкбольная торговля</span>
+        </div>
+
+        <div class="nav-links">
+            <a href="index.html">Каталог</a>
+            <a href="#">Бренды</a>
+            <a href="promotions.html">Акции </a>
+            <a href="#">Доставка</a>
+            <a href="#">Контакты</a>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 1rem;">
+            <div class="auth-buttons" id="authSection">
+                <button class="btn-outline" id="loginBtn"><i class="fas fa-user"></i> Войти</button>
+                <button class="btn-solid" id="registerBtn"><i class="fas fa-user-plus"></i> Регистрация</button>
+                <button class="btn-outline" id="logoutBtn" style="display: none;">
+                    <i class="fas fa-sign-out-alt"></i> Выйти
+                </button>
+            </div>
+            <button class="btn-admin" id="adminPanelBtn" style="display: none;">
+                <i class="fas fa-shield-alt"></i> Admin
+            </button>
+            <div class="cart-icon" onclick="window.location.href='cart.html'" style="cursor: pointer;">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-badge" id="cartCount">0</span>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Админ-панель -->
+<div id="adminPanel" class="admin-panel hidden">
+    <div class="admin-panel-header" id="adminPanelHeader">
+        <h3><i class="fas fa-crown"></i> Панель управления арсеналом</h3>
+        <i class="fas fa-chevron-up admin-toggle-icon" id="adminToggleIcon"></i>
+    </div>
+    <div class="admin-panel-content" id="adminPanelContent">
+        <div class="admin-form-grid">
+            <input type="text" id="admin-title" placeholder="Название товара (мин. 2 символа)">
+            <input type="number" id="admin-price" placeholder="Цена (₽)" step="0.01">
+            <input type="text" id="admin-category" placeholder="Категория (rifles, pistols, equipment)">
+            <textarea id="admin-desc" class="admin-textarea" placeholder="Описание товара..."></textarea>
+            <button id="add-product-btn" class="admin-btn-add">
+                <i class="fas fa-plus-circle"></i> Добавить в арсенал
+            </button>
+        </div>
+    </div>
+    <div class="admin-status-bar">
+        <div class="admin-welcome">
+            <i class="fas fa-shield-alt"></i>
+            <span id="adminUserStatus">Режим администратора</span>
+        </div>
+        <button class="admin-close-btn" id="closeAdminPanelBtn">
+            <i class="fas fa-times"></i> Свернуть
+        </button>
+    </div>
+</div>
+
+<div class="modal-overlay" id="authModal">
+    <div class="modal">
+        <span class="close-modal" id="closeModal">&times;</span>
+        <h2 id="modalTitle">Вход в аккаунт</h2>
+        
+        <input type="text" placeholder="Логин (мин. 3 символа)" id="emailInput">
+        <input type="password" placeholder="Пароль (мин. 4 символа)" id="passInput">
+        
+        <button class="btn-solid" id="modalActionBtn">
+            <i class="fas fa-sign-in-alt"></i> <span id="btnText">Войти</span>
+        </button>
+        
+        <div class="modal-footer">
+            <span id="switchModal" style="cursor:pointer;">Нет аккаунта? Зарегистрироваться</span>
+        </div>
+    </div>
+</div>
+
+<main>
+    <section class="hero">
+        <div class="hero-text">
+            <h2>Страйкбол <span>нового уровня</span></h2>
+            <p>Приводы, экипировка, тюнинг от лидеров рынка. Тактический стиль и надёжность.</p>
+            <button class="hero-btn">Перейти в каталог →</button>
+        </div>
+        <div style="font-size: 5rem; color: #1e3f66;">⚡</div>
+    </section>
+
+    <div class="filter-bar">
+        <span class="filter-btn active" data-category="all">Все товары</span>
+        <span class="filter-btn" data-category="rifles">Приводы</span>
+        <span class="filter-btn" data-category="pistols">Пистолеты</span>
+        <span class="filter-btn" data-category="equipment">Снаряжение</span>
+    </div>
+
+    <div class="products-grid" id="products-container">
+        <div style="grid-column: 1/-1; text-align: center; padding: 40px; color: #888;">
+            <i class="fas fa-sync fa-spin"></i> Загрузка арсенала...
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="footer-content">
+        <div style="color: #666; font-size: 0.9rem;">© 2026 AIRSOFT-RUS</div>
+        <div></div>
+        <div><i class="fab fa-telegram"></i> <i class="fab fa-youtube"></i></div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
